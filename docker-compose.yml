@@ -1,0 +1,97 @@
+version: '3.9'
+
+services:
+  postgres-users:
+    image: postgres:16
+    container_name: postgres-users
+    restart: always
+    environment:
+      POSTGRES_DB: users_db
+      POSTGRES_USER: users_user
+      POSTGRES_PASSWORD: users_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-users-data:/var/lib/postgresql/data
+    networks:
+      - microservices-network
+
+  postgres-products:
+    image: postgres:16
+    container_name: postgres-products
+    restart: always
+    environment:
+      POSTGRES_DB: products_db
+      POSTGRES_USER: products_user
+      POSTGRES_PASSWORD: products_password
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres-products-data:/var/lib/postgresql/data
+    networks:
+      - microservices-network
+
+  postgres-orders:
+    image: postgres:16
+    container_name: postgres-orders
+    restart: always
+    environment:
+      POSTGRES_DB: orders_db
+      POSTGRES_USER: orders_user
+      POSTGRES_PASSWORD: orders_password
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres-orders-data:/var/lib/postgresql/data
+    networks:
+      - microservices-network
+
+  postgres-payments:
+    image: postgres:16
+    container_name: postgres-payments
+    restart: always
+    environment:
+      POSTGRES_DB: payments_db
+      POSTGRES_USER: payments_user
+      POSTGRES_PASSWORD: payments_password
+    ports:
+      - "5435:5432"
+    volumes:
+      - postgres-payments-data:/var/lib/postgresql/data
+    networks:
+      - microservices-network
+
+  redis:
+    image: redis:7
+    container_name: redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - microservices-network
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - rabbitmq-data:/var/lib/rabbitmq
+    networks:
+      - microservices-network
+
+volumes:
+  postgres-users-data:
+  postgres-products-data:
+  postgres-orders-data:
+  postgres-payments-data:
+  redis-data:
+  rabbitmq-data:
+
+networks:
+  microservices-network:
+    driver: bridge
