@@ -1,0 +1,81 @@
+# ================================
+# JAVA / MAVEN
+# ================================
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+*.rar
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# ================================
+# SPRING BOOT
+# ================================
+application-local.yml
+application-local.properties
+
+# ================================
+# INTELLIJ IDEA
+# ================================
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+.idea_modules/
+
+# ================================
+# ECLIPSE
+# ================================
+.classpath
+.project
+.settings/
+bin/
+
+# ================================
+# VS CODE
+# ================================
+.vscode/
+
+# ================================
+# ANGULAR / NODE
+# ================================
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+frontend/.env
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# ================================
+# VARIAVEIS DE AMBIENTE
+# ================================
+.env
+.env.local
+.env.development
+.env.production
+*.env
+
+# ================================
+# DOCKER
+# ================================
+docker-compose.override.yml
+
+# ================================
+# SISTEMA OPERACIONAL
+# ================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ================================
+# LOGS
+# ================================
+*.log
+logs/
