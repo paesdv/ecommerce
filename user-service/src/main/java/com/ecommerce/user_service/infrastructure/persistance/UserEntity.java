@@ -1,7 +1,7 @@
-package com.ecommerce.user_service.core.entities;
-
+package com.ecommerce.user_service.infrastructure.persistance;
 
 import com.ecommerce.user_service.core.enums.UserRole;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,16 +14,24 @@ import java.util.UUID;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+@Entity
+@Table(name = "users")
+public class UserEntity {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    @Column(nullable = false)
     private String username;
 
+    @Column(nullable = false, unique = true)
     private String email;
 
+    @Column(nullable = false)
     private String password;
 
+    @Enumerated
     private UserRole role = UserRole.CUSTOMER;
 
     private LocalDateTime createdAt;
