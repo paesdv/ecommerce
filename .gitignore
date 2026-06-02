@@ -18,6 +18,8 @@ target/
 # ================================
 application-local.yml
 application-local.properties
+**/application.yaml
+**/application.yml
 
 # ================================
 # INTELLIJ IDEA
