@@ -4,6 +4,8 @@ import com.ecommerce.user_service.core.entities.User;
 import com.ecommerce.user_service.core.enums.UserRole;
 import com.ecommerce.user_service.core.gateway.PasswordEncoder;
 import com.ecommerce.user_service.core.gateway.UserGateway;
+import com.ecommerce.user_service.infrastructure.exception.EmailAlreadyExistsException;
+import com.ecommerce.user_service.infrastructure.exception.UsernameAlreadyExistsException;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
