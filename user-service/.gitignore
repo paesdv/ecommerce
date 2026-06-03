@@ -66,6 +66,7 @@ frontend/yarn-error.log*
 # DOCKER
 # ================================
 docker-compose.override.yml
+docker-compose.yml
 
 # ================================
 # SISTEMA OPERACIONAL

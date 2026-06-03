@@ -4,6 +4,8 @@ import com.ecommerce.user_service.core.entities.User;
 import com.ecommerce.user_service.core.gateway.JwtService;
 import com.ecommerce.user_service.core.gateway.PasswordEncoder;
 import com.ecommerce.user_service.core.gateway.UserGateway;
+import com.ecommerce.user_service.infrastructure.exception.InvalidPasswordException;
+import com.ecommerce.user_service.infrastructure.exception.UserNotFoundException;
 
 public class LoginUseCase {
 

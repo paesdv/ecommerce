@@ -10,12 +10,12 @@ import com.ecommerce.user_service.infrastructure.exception.UsernameAlreadyExists
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-public class RegisterUseCase {
+public class RegisterUserUseCase {
 
     private final UserGateway userGateway;
     private final PasswordEncoder passwordEncoder;
 
-    public RegisterUseCase(UserGateway userGateway, PasswordEncoder passwordEncoder){
+    public RegisterUserUseCase(UserGateway userGateway, PasswordEncoder passwordEncoder){
         this.userGateway = userGateway;
         this.passwordEncoder = passwordEncoder;
     }
