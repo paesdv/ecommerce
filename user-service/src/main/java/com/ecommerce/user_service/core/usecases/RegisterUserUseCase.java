@@ -30,7 +30,7 @@ public class RegisterUserUseCase {
         }
 
         User user = new User(
-                UUID.randomUUID(),
+                null,
                 username,
                 email,
                 passwordEncoder.encode(password),
